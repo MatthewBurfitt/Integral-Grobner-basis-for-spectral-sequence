@@ -4,4 +4,6 @@ Library of functions for polynomial arithmetic and computing Integral Grobner ba
 
 #Installation
 
+Place a copy of "IntagralGrobner.py" in your python path.
+
 #Usage
