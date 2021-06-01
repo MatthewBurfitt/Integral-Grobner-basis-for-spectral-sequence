@@ -92,6 +92,41 @@ def read_poly(file_name = 'polynomial'):
 
 #*************************************************Gernaral polynomial functions*************************************************
 
+#Evaluates a polynomial at a list of number values for each varibale
+#if a one or more variabes are 'None' then returns a polynomial evaluated on all terms but those variables reducing the total number of variables
+#if keep_varaible_positions then return a polynomial with the same number of varaibles regardless of variable evauation
+def eval_poly(poly, values, keep_varaible_positions = False):
+    numeric = True
+    for value in values:
+        if value == None:
+            numeric = False
+            break
+    if numeric:
+        total = 0
+    else:
+        new_poly = []
+    for term in poly:
+        term_total = term[0]
+        term_list = []
+        for i in range(len(values)):
+            if values[i] == None:
+                term_list.append(term[1][i])
+            else:
+                term_total *= values[i]**(term[1][i])
+                if keep_varaible_positions:
+                    term_list.append(0)
+        if numeric:
+            total += term_total
+        else:
+            new_poly.append([term_total, term_list])
+    if numeric:
+        if keep_varaible_positions:
+            return [[total, [0]*len(values)]]
+        else:
+            return total
+    else:
+        return new_poly
+                
 #combines terms of the same type in a polynomial
 def col_poly(poly_to_col):
     poly=copy.deepcopy(poly_to_col)
