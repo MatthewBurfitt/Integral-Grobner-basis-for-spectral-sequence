@@ -9,3 +9,11 @@ The code accompanies the paper: Matthew Burfitt, Jelena Grbic "The cohomology of
 Place a copy of "IntagralGrobner.py" in your python path, nothing else required other than Python 3.
 
 # Usage
+
+## Example
+
+```python
+import IntagralGrobner as G
+```
+
+## Reference manual
