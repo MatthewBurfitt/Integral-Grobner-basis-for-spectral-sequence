@@ -1,8 +1,8 @@
-##### Table of Contents
+# Table of Contents
 
-* [Overview](#Overview)  
-* [Installation](#Installation)  
-* [Usage](#Usage)
+1. [Overview](#Overview)  
+2. [Installation](#Installation)  
+3. [Usage](#Usage)
       * [Example](#Example)
       * [Reference manual](#Reference manual)
 
