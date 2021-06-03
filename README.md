@@ -18,18 +18,18 @@ import IntagralGrobner as G
 
 ## Reference manual
 
-  ### Polynomial operations
+### Polynomial operations
 
 
 
 
-  ### Polynomial display functions
+### Polynomial display functions
 
-    #### poly_to_text
+#### poly_to_text()
     
-    Returns a string representation of a given polynomial in varables given as a list of strings with teh same leght as the number of polynomial varaible
+Returns a string representation of a given fist input polynomial in varables given as a list of strings with teh same leght as the number of polynomial varaible as the second input.
 
 
-  ### Grobner bais functions
+### Grobner bais functions
 
 
