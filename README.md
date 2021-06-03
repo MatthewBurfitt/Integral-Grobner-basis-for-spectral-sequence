@@ -33,7 +33,7 @@ import IntagralGrobner as G
 
 ### Polynomial display functions
 
-#### ```diff + poly_to_text``` (poly, varaibles)
+#### poly_to_text(poly, varaibles)
 
   Returns a string representation of a given polynomial in polynomial varables of a list of strings with the same lenght as the number of polynomial varaibles.
 
@@ -42,6 +42,8 @@ import IntagralGrobner as G
   | **Parameters:** | **poly** | A polynomial. |
   | | **varaibles** | List of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
   | **Returns:** | | A string represtation of the polynomial. |
+
+---
 
 #### display_poly_list(poly_list, varaibles)
 
@@ -52,6 +54,8 @@ import IntagralGrobner as G
   | **Parameters:** | **poly_list** | A list of polynomials. |
   | | **varaibles** | List of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
 
+---
+
 #### display_poly_list_numbered(poly_list, varaibles)
 
   Prints a representation of a given list of polynomials (with same nubmer of varaibles) each polynomial numbered by list position on separate lines with polynomial varable representations given as a list of strings with the same lenght as the number of polynomial varaibles.
@@ -60,6 +64,8 @@ import IntagralGrobner as G
   | ------------ | ------------- | ------------- |
   | **Parameters:** | **poly_list** | A list of polynomials. |
   | | **varaibles** | List of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
+
+---
 
 #### display_poly_list_list_numbered(poly_list_list, varaibles)
 
@@ -70,6 +76,7 @@ import IntagralGrobner as G
   | **Parameters:** | **poly_list_list** | A list of lsits of polynomials. |
   | | **varaibles** | List of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
 
+---
 
 ### Grobner basis functions
 
