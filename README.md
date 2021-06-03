@@ -18,9 +18,18 @@ import IntagralGrobner as G
 
 ## Example
 
+Terms are represented as a list of lenght two the fist entry is the scaler constant (an integer) and the second a lsit (of integer) poweres of varaibles in the term.
+A polynomila is a list of terms with the same number of varaibles.
+
 ```python
-import IntagralGrobner as G
+#defin  a polynomila 
+polynomial = [ [1, [2,0]], [2, [1,1]], [3, [0,2]] ]
+
+#display the polynomial
+print(poly_to_text(polynomial, ['x', 'y']))
 ```
+
+More exaples form the paper the libray accompanies can be found in the 'Examples' folder.
 
 ## Reference manual
 
