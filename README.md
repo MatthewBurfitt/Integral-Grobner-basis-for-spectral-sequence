@@ -20,29 +20,29 @@ import IntagralGrobner as G
 
 ### Polynomial operations
 
-#### eval_poly()
+#### &#x1F539; eval_poly()
 
 ---
 
-#### neg_poly()
+#### &#x1F539; neg_poly()
 
 ---
 
-#### add_poly()
+#### &#x1F539; add_poly()
 
 ---
 
-#### mult_poly()
+#### &#x1F539; mult_poly()
 
 ---
 
-#### mult_list()
+#### &#x1F539; mult_list()
 
 ---
 
 ### Polynomial display functions
 
-#### &#x1F53B; poly_to_text(poly, varaibles)
+#### &#x1F539; poly_to_text(poly, varaibles)
 
   Returns a string representation of a given polynomial in polynomial varables of a list of strings with the same lenght as the number of polynomial varaibles.
 
@@ -54,7 +54,7 @@ import IntagralGrobner as G
 
 ---
 
-#### display_poly_list(poly_list, varaibles)
+#### &#x1F539; display_poly_list(poly_list, varaibles)
 
   Prints a representation of a given list of polynomials (with same nubmer of varaibles) on separate lines with polynomial varable representations given as a list of strings with the same lenght as the number of polynomial varaibles.
 
@@ -65,7 +65,7 @@ import IntagralGrobner as G
 
 ---
 
-#### display_poly_list_numbered(poly_list, varaibles)
+#### &#x1F539; display_poly_list_numbered(poly_list, varaibles)
 
   Prints a representation of a given list of polynomials (with same nubmer of varaibles) each polynomial numbered by list position on separate lines with polynomial varable representations given as a list of strings with the same lenght as the number of polynomial varaibles.
 
@@ -76,7 +76,7 @@ import IntagralGrobner as G
 
 ---
 
-#### display_poly_list_list_numbered(poly_list_list, varaibles)
+#### &#x1F539; display_poly_list_list_numbered(poly_list_list, varaibles)
 
   Prints a representation of a given list of polynomials (with same nubmer of varaibles) in a list each polynomial numbered by list position on separate lines. Polynomials are rperesented in varables given as a list of strings with the same lenght as the number of polynomial varaibles.
 
@@ -89,26 +89,50 @@ import IntagralGrobner as G
 
 ### Grobner basis functions
 
-#### reduce()
+#### &#x1F539; reduce()
 
-#### full_reduce()
+---
 
-#### list_reduce()
+#### &#x1F539; full_reduce()
 
-#### list_reduce_tracking()
+---
 
-#### reduce_list()
+#### &#x1F539; list_reduce()
 
-#### reduce_list_tracking()
+---
 
-#### S_poly()
+#### &#x1F539; list_reduce_tracking()
 
-#### G_poly()
+---
 
-#### grobner()
+#### &#x1F539; reduce_list()
 
-#### grobner_tracking()
+---
 
-#### intersection_Grobner()
+#### &#x1F539; reduce_list_tracking()
 
-#### Syzygy()
+---
+
+#### &#x1F539; S_poly()
+
+---
+
+#### &#x1F539; G_poly()
+
+---
+
+#### &#x1F539; grobner()
+
+---
+
+#### &#x1F539; grobner_tracking()
+
+---
+
+#### &#x1F539; intersection_Grobner()
+
+---
+
+#### &#x1F539; Syzygy()
+
+---
