@@ -2,7 +2,7 @@
 
 * [Overview](#Overview)  
 * [Installation](#Installation)  
-* [Usage](# Usage)
+* [Usage](#Usage)
       * [Example](#Example)
       * [Reference manual](#Reference manual)
 
