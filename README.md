@@ -20,10 +20,10 @@ import IntagralGrobner as G
 
 Terms are represented as a list of lenght two the fist entry is the scaler constant (an integer) and the second a lsit (of integer) poweres of varaibles in the term.
 A *polynomial* is a list of terms with the same number of varaibles.
-We represent the polynomial <img src="https://render.githubusercontent.com/render/math?math=x^2+2xy+3y^2"> as followes
+We represent the polynomial <img src="https://render.githubusercontent.com/render/math?math=x^2 %2B 2xy - 3y^2"> as followes
 
 ```python
-#define a polynomila x^2+2xy+3y^2
+#define a polynomila x^2+2xy-3y^2
 polynomial = [ [1, [2,0]], [2, [1,1]], [3, [0,2]] ]
 
 #display the polynomial
