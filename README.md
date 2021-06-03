@@ -4,7 +4,7 @@
 2. [Installation](#Installation)  
 3. [Usage](#Usage)
       1. [Example](#Example)
-      2. [Reference manual](#Reference manual)
+      2. [Reference manual](#Reference &nbsp; manual)
 
 # Overview
 
