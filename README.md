@@ -33,7 +33,7 @@ import IntagralGrobner as G
 
 ### Polynomial display functions
 
-#### poly_to_text(poly, varaibles)
+#### ```diff + poly_to_text``` (poly, varaibles)
 
   Returns a string representation of a given polynomial in polynomial varables of a list of strings with the same lenght as the number of polynomial varaibles.
 
