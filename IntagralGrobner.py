@@ -92,6 +92,20 @@ def read_poly(file_name = 'polynomial'):
 
 #*************************************************Gernaral polynomial functions*************************************************
 
+#combines terms of the same type in a polynomial
+def col_poly(poly_to_col):
+    poly=copy.deepcopy(poly_to_col)
+    for i in range(len(poly)-1,-1,-1):
+        for j in range(i-1,-1,-1):
+            if poly[i][1]==poly[j][1]:
+                poly[j][0]+=poly[i][0]
+                del(poly[i])
+                break
+    for i in range(len(poly)-1,-1,-1):
+        if poly[i][0]==0:
+            del(poly[i])
+    return poly
+
 #Evaluates a polynomial at a list of number values for each varibale
 #if a one or more variabes are 'None' then returns a polynomial evaluated on all terms but those variables reducing the total number of variables
 #if keep_varaible_positions then return a polynomial with the same number of varaibles regardless of variable evauation
@@ -125,21 +139,7 @@ def eval_poly(poly, values, keep_varaible_positions = False):
         else:
             return total
     else:
-        return new_poly
-                
-#combines terms of the same type in a polynomial
-def col_poly(poly_to_col):
-    poly=copy.deepcopy(poly_to_col)
-    for i in range(len(poly)-1,-1,-1):
-        for j in range(i-1,-1,-1):
-            if poly[i][1]==poly[j][1]:
-                poly[j][0]+=poly[i][0]
-                del(poly[i])
-                break
-    for i in range(len(poly)-1,-1,-1):
-        if poly[i][0]==0:
-            del(poly[i])
-    return poly
+        return col_poly(new_poly)
 
 #sort polynomial terms by monomial lex order
 def sort_poly(poly_to_sort):
