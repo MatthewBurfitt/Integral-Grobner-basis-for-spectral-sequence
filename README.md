@@ -37,12 +37,10 @@ import IntagralGrobner as G
 
 Returns a string representation of a given polynomial in varables of a list of strings with the same lenght as the number of polynomial varaibles.
 
-| Parameters |  |
 | ------------ | ------------- |
-| **poly** | A polynomial. |
-| **varaibles** | list of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
-| ------------ | ------------- |
-| **Returns** | A string represtation of the polynomial. |
+| **Parameters:** | **poly** | A polynomial. |
+| | **varaibles** | list of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
+| **Returns:** | text | A string represtation of the polynomial. |
 
 
 #### display_poly_list(poly_list, varaibles)
