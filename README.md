@@ -27,8 +27,19 @@ import IntagralGrobner as G
 
 #### poly_to_text()
     
-Returns a string representation of a given fist input polynomial in varables given as a list of strings with teh same leght as the number of polynomial varaible as the second input.
+Returns a string representation of a given first input polynomial in varables given as a list of strings with the same lenght as the number of polynomial varaibles as the second input.
 
+####display_poly_list()
+
+Prints a representation of a given first input list of polynomial in separate lines in varables given as a list of strings with the same lenght as the number of polynomial varaibles as the second input.
+
+####display_poly_list_numbered()
+
+Prints a representation of a given first input list of polynomial with each polynomial numbered by list position on a seprate line in varables given as a list of strings with the same lenght as the number of polynomial varaibles as the second input.
+
+####display_poly_list_list_numbered()
+
+Prints a representation of a given first input list of lists of polynomial with each polynomial number by out list then inner lsit position on a seprate line. Polynomials are rperesented in varables given as a list of strings with the same lenght as the number of polynomial varaibles as the second input.
 
 ### Grobner bais functions
 
