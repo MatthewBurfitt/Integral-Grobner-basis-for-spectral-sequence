@@ -3,8 +3,8 @@
 1. [Overview](#Overview)  
 2. [Installation](#Installation)  
 3. [Usage](#Usage)
-      * [Example](#Example)
-      * [Reference manual](#Reference manual)
+      1. [Example](#Example)
+      2. [Reference manual](#Reference manual)
 
 # Overview
 
