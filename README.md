@@ -22,18 +22,27 @@ import IntagralGrobner as G
 
 #### eval_poly()
 
+---
+
 #### neg_poly()
+
+---
 
 #### add_poly()
 
+---
+
 #### mult_poly()
+
+---
 
 #### mult_list()
 
+---
 
 ### Polynomial display functions
 
-#### poly_to_text(poly, varaibles)
+#### &#x1F53B; poly_to_text(poly, varaibles)
 
   Returns a string representation of a given polynomial in polynomial varables of a list of strings with the same lenght as the number of polynomial varaibles.
 
