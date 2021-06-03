@@ -20,14 +20,49 @@ import IntagralGrobner as G
 
 Terms are represented as a list of lenght two the fist entry is the scaler constant (an integer) and the second a lsit (of integer) poweres of varaibles in the term.
 A *polynomial* is a list of terms with the same number of varaibles.
-We represent the polynomial <img src="https://render.githubusercontent.com/render/math?math=x^2 %2B 2xy - 3y^2"> as followes
+We represent the polynomial <img src="https://render.githubusercontent.com/render/math?math=x^2 %2B 2xy - 3y^2"> as followes.
 
 ```python
 #define a polynomila x^2+2xy-3y^2
-polynomial = [ [1, [2,0]], [2, [1,1]], [3, [0,2]] ]
+polynomial = [ [1, [2,0]], [2, [1,1]], [-3, [0,2]] ]
 
 #display the polynomial
-print(poly_to_text(polynomial, ['x', 'y']))
+print(G.poly_to_text(polynomial, ['x', 'y']))
+```
+
+Basic polynomial operations such as evaluation, negation, addtion and multiplication can be applied to polynomials.
+
+```python
+#define a list of symetric polynomials
+polys=[
+      [ [1, [2,0,0]], [1, [0,2,0]], [1, [0,0,2]], [1, [1,1,0]], [1, [1,0,1]], [1, [0,1,1]] ],
+      [ [1, [1,0,0]], [1, [0,1,0]], [1, [0,0,1]] ],
+      [ [1, [3,0,0]], [1, [0,3,0]], [1, [0,0,3]], [1, [2,1,0]], [1, [2,0,1]], [1, [1,2,0]], [1, [0,2,1]], [1, [1,0,2]], [1, [0,1,2]], [1, [1,1,1]] ]
+      ]
+ 
+#display the polynomial list
+G.display_poly_list(polys, ['x', 'y', 'z'])
+
+#sort polynomials by lexagrphic ordering on varaibles and enumerated list disaplay
+sorted_poly = G.sort_poly(polys[0])
+print(sorted_poly, ['x', 'y', 'z']))
+sorted_polys = G.sort_poly_list(polys)
+G.display_poly_list_numbered(sorted_polys, ['x', 'y', 'z'])
+
+#evaluate or partialy evaluate a polynomial on variables
+fully_evaluated_poly = G.eval_poly(polys[0], [1,2,3])
+print(fully_evaluated_poly)
+partialy_evaluated_poly1 = G.eval_poly(polys[0], [0,None,None])
+G.display_poly_list(partialy_evaluated_poly1, ['y', 'z'])
+partialy_evaluated_poly2 = G.eval_poly(polys[0], [0,None,None], keep_varaible_positions = True)
+G.display_poly_list(partialy_evaluated_poly2, ['x', 'y', 'z'])
+
+#polynomial arithmetic
+new_poly = G.add_poly(G.mult_poly(polys[1], polys[1]), G.neg_poly(polys[0]))
+print(G.poly_to_text(new_poly, ['x', 'y', 'z']))
+x = [[2, [1,0,0]]]
+new_poly_list = G.mult_list(x, polys)
+G.display_poly_list_numbered(new_poly_list, ['x', 'y', 'z'])
 ```
 
 More exaples form the paper the libray accompanies can be found in the 'Examples' folder.
@@ -55,6 +90,15 @@ More exaples form the paper the libray accompanies can be found in the 'Examples
 #### &#x1F539; mult_list()
 
 ---
+
+#### &#x1F539; sort_poly(poly_to_sort)
+
+---
+
+#### &#x1F539; sort_poly_list(poly_list_to_sort, sort_with = None)
+
+---
+
 
 ### Polynomial display functions
 
