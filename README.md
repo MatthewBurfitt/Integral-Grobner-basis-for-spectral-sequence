@@ -33,19 +33,24 @@ import IntagralGrobner as G
 
 ### Polynomial display functions
 
-#### poly_to_text()
+#### poly_to_text(poly, varaibles)
 
-Returns a string representation of a given first input polynomial in varables given as a list of strings with the same lenght as the number of polynomial varaibles as the second input.
+Returns a string representation of a given polynomial in varables of a list of strings with the same lenght as the number of polynomial varaibles.
 
-#### display_poly_list()
+Parameters | 
+------------ | -------------
+**Content from cell 1** | A polynomial
+**varaibles** | list of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible in teh given poistion.
+
+#### display_poly_list(poly_list, varaibles)
 
 Prints a representation of a given first input list of polynomial in separate lines in varables given as a list of strings with the same lenght as the number of polynomial varaibles as the second input.
 
-#### display_poly_list_numbered()
+#### display_poly_list_numbered(poly_list, varaibles)
 
 Prints a representation of a given first input list of polynomial with each polynomial numbered by list position on a seprate lines in varables given as a list of strings with the same lenght as the number of polynomial varaibles as the second input.
 
-#### display_poly_list_list_numbered()
+#### display_poly_list_list_numbered(poly_list, varaibles)
 
 Prints a representation of a given first input list of lists of polynomial with each polynomial number by out list then inner list position on a seprate lines. Polynomials are rperesented in varables given as a list of strings with the same lenght as the number of polynomial varaibles as the second input.
 
