@@ -10,6 +10,12 @@ Place a copy of "IntagralGrobner.py" in your python path, nothing else required 
 
 # Usage
 
+Load the *IntagralGrobner* libray.
+
+```python
+import IntagralGrobner as G
+```
+
 ## Example
 
 ```python
