@@ -35,26 +35,40 @@ import IntagralGrobner as G
 
 #### poly_to_text(poly, varaibles)
 
-Returns a string representation of a given polynomial in varables of a list of strings with the same lenght as the number of polynomial varaibles.
+Returns a string representation of a given polynomial in polynomial varables of a list of strings with the same lenght as the number of polynomial varaibles.
 
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly** | A polynomial. |
-| | **varaibles** | list of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
+| | **varaibles** | List of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
 | **Returns:** | | A string represtation of the polynomial. |
-
 
 #### display_poly_list(poly_list, varaibles)
 
-Prints a representation of a given first input list of polynomial in separate lines in varables given as a list of strings with the same lenght as the number of polynomial varaibles as the second input.
+Prints a representation of a given list of polynomials (with same nubmer of varaibles) on separate lines with polynomial varable representations given as a list of strings with the same lenght as the number of polynomial varaibles.
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly_list** | A list of polynomials. |
+| | **varaibles** | List of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
 
 #### display_poly_list_numbered(poly_list, varaibles)
 
-Prints a representation of a given first input list of polynomial with each polynomial numbered by list position on a seprate lines in varables given as a list of strings with the same lenght as the number of polynomial varaibles as the second input.
+Prints a representation of a given list of polynomials (with same nubmer of varaibles) each polynomial numbered by list position on separate lines with polynomial varable representations given as a list of strings with the same lenght as the number of polynomial varaibles.
 
-#### display_poly_list_list_numbered(poly_list, varaibles)
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly_list** | A list of polynomials. |
+| | **varaibles** | List of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
 
-Prints a representation of a given first input list of lists of polynomial with each polynomial number by out list then inner list position on a seprate lines. Polynomials are rperesented in varables given as a list of strings with the same lenght as the number of polynomial varaibles as the second input.
+#### display_poly_list_list_numbered(poly_list_list, varaibles)
+
+Prints a representation of a given list of polynomials (with same nubmer of varaibles) in a list each polynomial numbered by list position on separate lines. Polynomials are rperesented in varables given as a list of strings with the same lenght as the number of polynomial varaibles.
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly_list_list** | A list of lsits of polynomials. |
+| | **varaibles** | List of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
 
 
 ### Grobner basis functions
