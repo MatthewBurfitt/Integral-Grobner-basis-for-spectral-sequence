@@ -1,3 +1,11 @@
+##### Table of Contents
+
+* [Overview](#Overview)  
+* [Installation](#Installation)  
+* [Usage](# Usage)
+      * [Example](#Example)
+      * [Reference manual](#Reference manual)
+
 # Overview
 
 Library of functions for polynomial arithmetic and computing integral Grobner basis, incuding Grobner basis of the intersections of two ideals and the Grobner basis of Syzygys. In addtion, the polynomials used to provide any Grobner basis interms of the orginal ideal genraotrs can be tracked and returned. If ideal generators are homogenious polynomials, then computations can be restricted to a maximal degree (or dgrees within a partiton of the varaibles).
@@ -65,7 +73,13 @@ new_poly_list = G.mult_list(x, polys)
 G.display_poly_list_numbered(new_poly_list, ['x', 'y', 'z'])
 ```
 
-More exaples form the paper the libray accompanies can be found in the 'Examples' folder.
+For the purpose of Grobner basis comutatiosn, we treat a list of polynomials as the gnerators of an ideal.
+
+```python
+
+```
+
+More exaples form the paper that the libray accompanies can be found in the *'Examples'* folder.
 
 ## Reference manual
 
