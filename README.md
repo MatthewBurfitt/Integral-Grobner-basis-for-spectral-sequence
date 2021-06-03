@@ -45,7 +45,7 @@ G.display_poly_list(polys, ['x', 'y', 'z'])
 
 #sort polynomials by lexagrphic ordering on varaibles and enumerated list disaplay
 sorted_poly = G.sort_poly(polys[0])
-print(sorted_poly, ['x', 'y', 'z']))
+print(G.poly_to_text(sorted_poly, ['x', 'y', 'z']))
 sorted_polys = G.sort_poly_list(polys)
 G.display_poly_list_numbered(sorted_polys, ['x', 'y', 'z'])
 
@@ -53,9 +53,9 @@ G.display_poly_list_numbered(sorted_polys, ['x', 'y', 'z'])
 fully_evaluated_poly = G.eval_poly(polys[0], [1,2,3])
 print(fully_evaluated_poly)
 partialy_evaluated_poly1 = G.eval_poly(polys[0], [0,None,None])
-G.display_poly_list(partialy_evaluated_poly1, ['y', 'z'])
+print(G.poly_to_text(partialy_evaluated_poly1, ['y', 'z']))
 partialy_evaluated_poly2 = G.eval_poly(polys[0], [0,None,None], keep_varaible_positions = True)
-G.display_poly_list(partialy_evaluated_poly2, ['x', 'y', 'z'])
+print(G.poly_to_text(partialy_evaluated_poly2, ['x', 'y', 'z']))
 
 #polynomial arithmetic
 new_poly = G.add_poly(G.mult_poly(polys[1], polys[1]), G.neg_poly(polys[0]))
