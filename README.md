@@ -117,7 +117,17 @@ More exaples form the paper that the libray accompanies can be found in the *'Ex
 
 ### Polynomial operations
 
-#### &#x1F539; eval_poly()
+#### &#x1F539; eval_poly(poly, values, keep_varaible_positions = False)
+
+Evaluates a polynomial at on list of values for each for all or some varibales.
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly** | A polynomial. |
+| | **values** | List of numbers of the same lenght as the number of polynomial varaibles. Entries of the list can be *None* if the evuation of that varaible it not desired. |
+| | **keep_varaible_positions** | Determins weather evauated veriables are removed form the polynomials or not. |
+| **Returns:** | | An integer or float when all varaibles are evaluated unless *keep_varaible_positions* is *False*. |
+| Or | | A polynomila when some varaible are not evaluated or when *keep_varaible_positions* is *TRUE*. |
 
 ---
 
