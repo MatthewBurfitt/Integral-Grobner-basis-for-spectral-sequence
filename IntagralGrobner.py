@@ -21,29 +21,32 @@ def lcm(a,b):
 
 #gives a text form of a polynomial with polynomial varaibles named form a varable list
 def poly_to_text(poly, varaibles):
-    text = ''
-    for term in poly:
-        if term[0] == 1 and term == poly[0]:
-            if sum(term[1]) == 0:
-                text +=" 1"
-        elif term[0] == -1:
-            text+="-"
-            if sum(term[1]) == 0:
-                text += "1"
-        elif term[0]<-1 or term == poly[0]:
-            text+=str(term[0])
-        elif term[0] == 1:
-            text += "+"
-            if sum(term[1]) == 0:
-                text += "1"
-        else:
-            text += "+" + str(term[0])
-        for i in range(len(term[1])):
-            if term[1][i] ==1 :
-                text += varaibles[i]
-            elif term[1][i] > 1:
-                    text += varaibles[i] + "^" + str(term[1][i])
-    return(text)
+    if poly == []:
+        return('0')
+    else:
+        text = ''
+        for term in poly:
+            if term[0] == 1 and term == poly[0]:
+                if sum(term[1]) == 0:
+                    text +=" 1"
+            elif term[0] == -1:
+                text+="-"
+                if sum(term[1]) == 0:
+                    text += "1"
+            elif term[0]<-1 or term == poly[0]:
+                text+=str(term[0])
+            elif term[0] == 1:
+                text += "+"
+                if sum(term[1]) == 0:
+                    text += "1"
+            else:
+                text += "+" + str(term[0])
+            for i in range(len(term[1])):
+                if term[1][i] ==1 :
+                    text += varaibles[i]
+                elif term[1][i] > 1:
+                        text += varaibles[i] + "^" + str(term[1][i])
+        return(text)
 
 #prints all polynomials in a list with polynomial varaibles from a varables list
 def display_poly_list(poly_list, varaibles):
@@ -370,7 +373,7 @@ def full_reduce(poly1, poly2, edit_out = False, reduction_out = False):
         else:
             return sort_poly(poly)
 
-#reduce a sorted first polynomial by a second list of sorted polynomial
+#reduce a sorted first polynomial by a second list of sorted polynomials
 def list_reduce(poly1, poly_list, full_reduced = False, edit_out = False, reduction_out = False):
     poly=copy.deepcopy(poly1)
     if reduction_out:
@@ -458,7 +461,7 @@ def list_reduce_tracking(poly1, poly_list, tracker1, tracker_list, full_reduced 
         else:
             return poly, tracker
 
-#reduces a polynomila list by itself
+#reduces a sorted polynomial list by itself
 def reduce_list(poly_list, full_reduced = True):
     poly_list_new = copy.deepcopy(poly_list)
     done = False
@@ -477,7 +480,7 @@ def reduce_list(poly_list, full_reduced = True):
     else:
         return sort_poly_list(poly_list_new)
 
-#reduces a polynomial list by itself while tracking and repeating the reduction in a second polynomial list
+#reduces a sorted polynomial list by itself while tracking the steps of the reduction
 def reduce_list_tracking(poly_list, tracking_list, full_reduced = True):
     poly_list_new = copy.deepcopy(poly_list)
     tracking_list_new = copy.deepcopy(tracking_list)
@@ -663,18 +666,18 @@ def grobner_tracking(poly_list, reduced = True, dim_ranges = [], max_dims = [], 
             grobner_basis, grobner_ideal_corespondence = reduce_list_tracking(grobner_basis, grobner_ideal_corespondence, full_reduced = True)
     return grobner_basis, grobner_ideal_corespondence
 
-#Find a reduced gorber basis of the interection of two ideal whose generators are epresed as two polynomial lists
-def intersection_Grobner(poly_list1_in, poly_list2_in, varaibles, dim_ranges = [], max_dims = [], grobner_poly_lists_first = False, show_poly_list = True):
+#Find a reduced Gorbner basis of the interection of two ideal whose generators are epresed as two polynomial lists
+def intersection_Grobner(poly_list1_in, poly_list2_in, varaibles, dim_ranges = [], max_dims = [], grobner_poly_lists_first = False, show_poly_list = True, progress_output = True):
     poly_list = []
     term = [0]*(len(poly_list1_in[0][0][1])+1)
     term[0] = 1
     mon = [1, term]
     if grobner_poly_lists_first:
-        poly_list1 = grobner(poly_list1_in, reduced = True, dim_ranges = dim_ranges, max_dims = max_dims)
+        poly_list1 = grobner(poly_list1_in, reduced = True, dim_ranges = dim_ranges, max_dims = max_dims, progress_output = progress_output)
         if show_poly_list:
             print("\n Grober basis of first ideal:")
             display_poly_list(poly_list1, varaibles)
-        poly_list2 = grobner(poly_list2_in, reduced = True, dim_ranges = dim_ranges, max_dims = max_dims)
+        poly_list2 = grobner(poly_list2_in, reduced = True, dim_ranges = dim_ranges, max_dims = max_dims, progress_output = progress_output)
         if show_poly_list:
             print("\n Grober basis of second ideal:")
             display_poly_list(poly_list2, varaibles)
@@ -706,7 +709,7 @@ def intersection_Grobner(poly_list1_in, poly_list2_in, varaibles, dim_ranges = [
             poly_term = [-term[0],temp]
             poly_new.append(poly_term)
         poly_list.append(poly_new)
-    Intersection_Grobner = remove_polys_containing(grobner(poly_list, reduced = True, dim_ranges = dim_ranges, max_dims = max_dims), mon)
+    Intersection_Grobner = remove_polys_containing(grobner(poly_list, reduced = True, dim_ranges = dim_ranges, max_dims = max_dims, progress_output = progress_output), mon)
     return remove_highest_var(Intersection_Grobner)
 
 #Syzygy Grobner bais of a Grobner basis
@@ -717,8 +720,8 @@ def Syzygy(Grobner_bais, remove_trivial_syz = True, dim_ranges = [], max_dims = 
             non_triaval = True
             not_out_of_range = True
             leading_lcm = lcm_mon(Grobner_bais[i][0], Grobner_bais[j][0])
-            m1 = div_mon(leading_lcm,Grobner_bais[i][0])
-            m2 = div_mon(leading_lcm,Grobner_bais[j][0])
+            m1 = div_mon(leading_lcm, Grobner_bais[i][0])
+            m2 = div_mon(leading_lcm, Grobner_bais[j][0])
             S = sort_poly(add_poly( mono_mult(m1, Grobner_bais[i]) , neg_poly(mono_mult(m2, Grobner_bais[j])) ))
             syz = list_reduce(S, Grobner_bais, full_reduced = True, edit_out = False, reduction_out = True)[1]
             syz[i] = add_poly(neg_poly(syz[i]), [m1])
