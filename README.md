@@ -8,9 +8,9 @@
 
 # Overview
 
-Library of functions for polynomial arithmetic and computing integral Gröbner basies, incuding Gröbner basis of the intersections of two ideals and the Gröbner basis of Syzygys. In addtion, the polynomials used to provide any Gröbner basis interms of the orginal ideal genraotrs can be tracked and returned. If ideal generators are homogenious polynomials, then computations can be restricted to a maximal degree (or dgrees within a partiton of the varaibles).
+Library of functions for polynomial arithmetic and computing integral Gröbner bases, inducing Gröbner basis of the intersections of two ideals and the Gröbner basis of Syzygys. In addition, the polynomials used to provide any Gröbner basis in terms of the original ideal generators can be tracked and returned. If ideal generators are homogenous polynomials, then computations can be restricted to a maximal degree (or degrees within a partition of the variables).
 
-The code accompanies the paper: Matthew Burfitt, Jelena Grbić "The cohomology of free loop spaces of <img src="https://render.githubusercontent.com/render/math?math=SU(n %2B 1)/T^n">" and the libray includes everything needed to be applied to computations with certian Leray-Serre spectral sequences. All code providing computational results presented in the paper are given as exaples.
+The code accompanies the paper: Matthew Burfitt, Jelena Grbić "The cohomology of free loop spaces of <img src="https://render.githubusercontent.com/render/math?math=SU(n %2B 1)/T^n">" and the library includes everything needed to be applied to computations with certain Leray-Serre spectral sequences. All code providing computational results presented in the paper are given as examples.
 
 # Installation
 
@@ -18,7 +18,7 @@ Place a copy of "IntagralGrobner.py" in your python path, nothing else required 
 
 # Usage
 
-Load the *IntagralGrobner* libray.
+Load the *IntagralGrobner* library.
 
 ```python
 import IntagralGrobner as G
@@ -26,22 +26,22 @@ import IntagralGrobner as G
 
 ## Example
 
-Terms are represented as a list of lenght two the fist entry is the scaler constant (an integer) and the second a lsit (of integer) poweres of varaibles in the term.
-A *polynomial* is a list of terms with the same number of varaibles.
-We represent the polynomial <img src="https://render.githubusercontent.com/render/math?math=x^2 %2B 2xy - 3y^2"> as followes.
+Terms are represented as a list of length two the fist entry is the scaler constant (an integer) and the second a list (of integer) powers of variables in the term.
+A *polynomial* is a list of terms with the same number of variables.
+We represent the polynomial <img src="https://render.githubusercontent.com/render/math?math=x^2 %2B 2xy - 3y^2"> as follows.
 
 ```python
-#define a polynomila x^2+2xy-3y^2
+#define a polynomial x^2+2xy-3y^2
 polynomial = [ [1, [2,0]], [2, [1,1]], [-3, [0,2]] ]
 
 #display the polynomial
 print(G.poly_to_text(polynomial, ['x', 'y']))
 ```
 
-Basic polynomial operations such as evaluation, negation, addtion and multiplication can be applied to polynomials.
+Basic polynomial operations such as evaluation, negation, addition and multiplication can be applied to polynomials.
 
 ```python
-#define a list of symetric polynomials
+#define a list of symmetric polynomials
 polys=[
       [ [1, [2,0,0]], [1, [0,2,0]], [1, [0,0,2]], [1, [1,1,0]], [1, [1,0,1]], [1, [0,1,1]] ],
       [ [1, [1,0,0]], [1, [0,1,0]], [1, [0,0,1]] ],
@@ -51,13 +51,13 @@ polys=[
 #display the polynomial list
 G.display_poly_list(polys, ['x', 'y', 'z'])
 
-#sort polynomials by lexicographical ordering on varaibles and enumerated list disaplay
+#sort polynomials by lexicographical ordering on variables and enumerated list display
 sorted_poly = G.sort_poly(polys[0])
 print(G.poly_to_text(sorted_poly, ['x', 'y', 'z']))
 sorted_polys = G.sort_poly_list(polys)
 G.display_poly_list_numbered(sorted_polys, ['x', 'y', 'z'])
 
-#evaluate or partialy evaluate a polynomial on variables
+#evaluate or partially evaluate a polynomial on variables
 fully_evaluated_poly = G.eval_poly(polys[0], [1,2,3])
 print(fully_evaluated_poly)
 partialy_evaluated_poly1 = G.eval_poly(polys[0], [0,None,None])
@@ -73,11 +73,11 @@ new_poly_list = G.mult_list(x, polys)
 G.display_poly_list_numbered(new_poly_list, ['x', 'y', 'z'])
 ```
 
-For the purpose of Gröbner basis computations, we treat a list of polynomials as the gnerators of an ideal.
+For the purpose of Gröbner basis computations, we treat a list of polynomials as the generators of an ideal.
 
 ```python
 
-#a list of symetric polynomials
+#a list of symmetric polynomials
 sym_polys=[
           [ [1, [1,0,0]], [1, [0,1,0]], [1, [0,0,1]] ],
           [ [1, [2,0,0]], [1, [0,2,0]], [1, [0,0,2]], [1, [1,1,0]], [1, [1,0,1]], [1, [0,1,1]] ],
@@ -89,7 +89,7 @@ G.display_poly_list_numbered(sym_polys, ['x', 'y', 'z'])
 Grobner_basis = G.grobner(sym_polys, reduced = True, dim_ranges = [], max_dims = [], progress_output = True)
 G.display_poly_list_numbered(Grobner_basis, ['x', 'y', 'z'])
 
-#obtaining the Grobner bais of ideal generated by sym_polys along with an expression in tersm of the orignial ideal
+#obtaining the Grobner basis of ideal generated by sym_polys along with an expression in terms of the original ideal
 Grobner_basis, Grobner_ideal_corespondence = G.grobner_tracking(sym_polys, reduced = True, dim_ranges = [], max_dims = [], progress_output = True)
 G.display_poly_list_list_numbered(Grobner_ideal_corespondence, ['x', 'y', 'z'])
 
@@ -100,18 +100,18 @@ dif_polys = [
             [ [1, [1,0,0]], [1, [0,1,0]], [2, [0,0,1]] ]
             ]
 
-#Grobner basis of the intersection of of ideals gnerated by sym_polys and dif_polys
-#the elemnts quitnet of Z[x,y,z] by symetic polynomials (sym_polys) have a rpesentavie blow degree 6 and all polynomials are homogenious
+#Grobner basis of the intersection of of ideals generated by sym_polys and dif_polys
+#the elements quotient of Z[x,y,z] by symmetric polynomials (sym_polys) have a representative blow degree 6 and all polynomials are homogenious
 #so we can set on all varaible (dim_ranges = [[0,2]]) the maximal degree to be 6 (max_dims = [6])
 Grobner_basis_of_intersection = G.intersection_Grobner(sym_polys, dif_polys, ['x','y','z'], dim_ranges = [[0,2]], max_dims = [6], grobner_poly_lists_first = False, show_poly_list = True)
 G.display_poly_list_numbered(Grobner_basis_of_intersection, ['x', 'y', 'z'])
 
-#Grobner basis of the Syzygy relatiosn between the Grobner basis of the intersection polynomials
+#Grobner basis of the Syzygy relations between the Grobner basis of the intersection polynomials
 intersection_Grobner_Syzygys = G.Syzygy(Grobner_basis_of_intersection, remove_trivial_syz = True, dim_ranges = [], max_dims = [])
 G.display_poly_list_list_numbered(intersection_Grobner_Syzygys, ['x', 'y', 'z'])
 ```
 
-More exaples form the paper that the libray accompanies can be found in the *'Examples'* folder.
+More examples form the paper that the library accompanies can be found in the *'Examples'* folder.
 
 ## Reference manual
 
