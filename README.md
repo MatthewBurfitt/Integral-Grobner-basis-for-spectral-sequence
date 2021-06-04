@@ -115,27 +115,27 @@ More examples form the paper that the library accompanies can be found in the *'
 
 ## Reference manual
 
-Unless otherwise stated assume that all polynomials used in any function **must** have the same number varaiable power entries in thier term expressions.
+Unless otherwise stated assume that all polynomials used in any function **must** have the same number variable power entries in their term expressions.
 
 ### Polynomial operations
 
-#### &#x1F539; eval_poly(poly, values, keep_varaible_positions = False)
+#### &#x1F539; eval_poly(poly, values, keep_variable_positions = False)
 
-Evaluates a polynomial at on list of values for all or some varibales.
+Evaluates a polynomial at on list of values for all or some variables.
 
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly** | A polynomial. |
-| | **values** | List of numbers of the same lenght as the number of polynomial varaibles. Entries of the list can be *None* if the evuation of that varaible it not desired. |
-| | **keep_varaible_positions** | Determins weather evauated veriables positions are removed form the polynomials or not. |
-| **Returns:** | | An integer or float when all varaibles are evaluated unless *keep_varaible_positions* is *TRUE*. |
-| Or | | A polynomila when some varaible are not evaluated or when *keep_varaible_positions* is *TRUE*. |
+| | **values** | List of numbers of the same length as the number of polynomial variables. Entries of the list can be *None* if the equation of that variable it not desired. |
+| | **keep_variable_positions** | Determines weather evaluated variables positions are removed form the polynomials or not. |
+| **Returns:** | | An integer or float when all variables are evaluated unless *keep_variable_positions* is *TRUE*. |
+| Or | | A polynomial when some variable are not evaluated or when *keep_variable_positions* is *TRUE*. |
 
 ---
 
 #### &#x1F539; neg_poly(poly_to_neg)
 
-Negate all cofficnets of terms in a polynomial.
+Negate all coefficients of terms in a polynomial.
 
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
@@ -146,7 +146,7 @@ Negate all cofficnets of terms in a polynomial.
 
 #### &#x1F539; add_poly(poly1,poly2)
 
-Adds a pair of polynomials (each polynomial with the same number of varaibles).
+Adds a pair of polynomials (each polynomial with the same number of variables).
 
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
@@ -158,27 +158,27 @@ Adds a pair of polynomials (each polynomial with the same number of varaibles).
 
 #### &#x1F539; mult_poly(poly1, poly2, exterior = 0)
 
-Multiplies a pair of polynomials (each polynomial with the same number of varaibles).
+Multiplies a pair of polynomials (each polynomial with the same number of variables).
 
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly1** | A polynomial. |
 | | **poly2** | A polynomial. |
-| | **exterior** | A integer less than the number of varaibles. Though no longer polynomial multiplication, variables in either polynomial below this value will be treated as variable in an exterior algebra when multiplied. |
+| | **exterior** | A integer less than the number of variables. Though no longer polynomial multiplication, variables in either polynomial below this value will be treated as variable in an exterior algebra when multiplied. |
 | **Returns:** | | Polynomial multiplication of the inputs. |
 
 ---
 
 #### &#x1F539; mult_list(poly_to_mul, poly_list, exterior = 0)
 
-Multiplies each polynomial in a list lsit by a polynomial (all polynomial with the same number of varaibles).
+Multiplies each polynomial in a list list by a polynomial (all polynomial with the same number of variables).
 
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly_to_mul** | A polynomial. |
 | | **poly_list** | A list of polynomials. |
-| | **exterior** | A integer less than the number of varaibles. Though no longer polynomial multiplication, variables in any polynomial below this value will be treated as variable in an exterior algebra when multiplied. |
-| **Returns:** | | A Polynomial list, multiplication of the input polynomial lsit by the input polynomial. |
+| | **exterior** | A integer less than the number of variables. Though no longer polynomial multiplication, variables in any polynomial below this value will be treated as variable in an exterior algebra when multiplied. |
+| **Returns:** | | A Polynomial list, multiplication of the input polynomial list by the input polynomial. |
 
 ---
 
@@ -189,66 +189,66 @@ Sorts polynomials terms by monomial lexicographical ordering.
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly_to_sort** | A polynomial. |
-| **Returns:** | | The input polynomial whose terms are soreted. |
+| **Returns:** | | The input polynomial whose terms are sorted. |
 
 ---
 
 #### &#x1F539; sort_poly_list(poly_list_to_sort, sort_with = None)
 
-Sorts each polynomial terms in a list by monomial lexicographical odering and the list order by monomial lexicographical ordering on the ordered leading terms monomial.
+Sorts each polynomial terms in a list by monomial lexicographical ordering and the list order by monomial lexicographical ordering on the ordered leading terms monomial.
 
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly_list_to_sort** | A list of polynomials. |
-| **Returns:** | | the input polynomial list whose order and term orders are soreted. |
+| **Returns:** | | the input polynomial list whose order and term orders are sorted. |
 
 ---
 
 
 ### Polynomial display functions
 
-#### &#x1F539; poly_to_text(poly, varaibles)
+#### &#x1F539; poly_to_text(poly, variables)
 
-  Returns a string representation of a given polynomial in polynomial varables of a list of strings with the same lenght as the number of polynomial varaibles.
+  Returns a string representation of a given polynomial in polynomial variables of a list of strings with the same length as the number of polynomial variables.
 
   |  | Variable | Description |
   | ------------ | ------------- | ------------- |
   | **Parameters:** | **poly** | A polynomial. |
-  | | **varaibles** | List of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
-  | **Returns:** | | A string represtation of the polynomial. |
+  | | **variables** | List of strings of the same length as the number of polynomial variables each string representing the charterer(s) to be used to display the variable at the given position in the list. |
+  | **Returns:** | | A string representation of the polynomial. |
 
 ---
 
-#### &#x1F539; display_poly_list(poly_list, varaibles)
+#### &#x1F539; display_poly_list(poly_list, variables)
 
-  Prints a representation of a given list of polynomials (with same nubmer of varaibles) on separate lines with polynomial varable representations given as a list of strings with the same lenght as the number of polynomial varaibles.
+  Prints a representation of a given list of polynomials (with same number of variables) on separate lines with polynomial arable representations given as a list of strings with the same length as the number of polynomial variables.
 
   |  | Variable | Description |
   | ------------ | ------------- | ------------- |
   | **Parameters:** | **poly_list** | A list of polynomials. |
-  | | **varaibles** | List of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
+  | | **variables** | List of strings of the same length as the number of polynomial variables each string representing the charterer(s) to be used to display the variable at the given position in the list. |
 
 ---
 
-#### &#x1F539; display_poly_list_numbered(poly_list, varaibles)
+#### &#x1F539; display_poly_list_numbered(poly_list, variables)
 
-  Prints a representation of a given list of polynomials (with same nubmer of varaibles) each polynomial numbered by list position on separate lines with polynomial varable representations given as a list of strings with the same lenght as the number of polynomial varaibles.
+  Prints a representation of a given list of polynomials (with same number of variables) each polynomial numbered by list position on separate lines with polynomial variable representations given as a list of strings with the same length as the number of polynomial variables.
 
   |  | Variable | Description |
   | ------------ | ------------- | ------------- |
   | **Parameters:** | **poly_list** | A list of polynomials. |
-  | | **varaibles** | List of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
+  | | **variables** | List of strings of the same length as the number of polynomial variables each string representing the charterer(s) to be used to display the variable at the given position in the list. |
 
 ---
 
-#### &#x1F539; display_poly_list_list_numbered(poly_list_list, varaibles)
+#### &#x1F539; display_poly_list_list_numbered(poly_list_list, variables)
 
-  Prints a representation of a given list of polynomials (with same nubmer of varaibles) in a list each polynomial numbered by list position on separate lines. Polynomials are rperesented in varables given as a list of strings with the same lenght as the number of polynomial varaibles.
+  Prints a representation of a given list of polynomials (with same number of variables) in a list each polynomial numbered by list position on separate lines. Polynomials are represented in variables given as a list of strings with the same length as the number of polynomial variables.
 
   |  | Variable | Description |
   | ------------ | ------------- | ------------- |
-  | **Parameters:** | **poly_list_list** | A list of lsits of polynomials. |
-  | | **varaibles** | List of strings of the same lenght as the number of polynomial varaibles each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list. |
+  | **Parameters:** | **poly_list_list** | A list of lists of polynomials. |
+  | | **variables** | List of strings of the same length as the number of polynomial variables each string representing the charterer(s) to be used to display the variable at the given position in the list. |
 
 ---
 
@@ -274,9 +274,9 @@ Fully reduces a **sorted** first polynomial by a second **sorted** polynomial (r
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly1** | A sorted polynomial. |
 | | **poly2** | A sorted polynomial. |
-| | **reduction_out** | A bool, that determins weather a polynomial decribing the reduction is output. |
+| | **reduction_out** | A bool, that determines weather a polynomial describing the reduction is output. |
 | **Returns:** | | Sorted polynomial full reduction of the first input by the second. |
-| Or | | Apair of a Sorted polynomial full reduction of the first input by the second and the polynomial multiple of *poly2* used to fully reduce *poly1*. |
+| Or | | A pair of a Sorted polynomial full reduction of the first input by the second and the polynomial multiple of *poly2* used to fully reduce *poly1*. |
 
 ---
 
@@ -288,7 +288,7 @@ Reduce a **sorted** first polynomial by a second list of **sorted** polynomials.
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly1** | A sorted polynomial. |
 | | **poly_list** | A list of sorted polynomials. |
-| | **full_reduced** | A bool, that determins weather reduction (*False*) or full reduction (*True*) is used. |
+| | **full_reduced** | A bool, that determines weather reduction (*False*) or full reduction (*True*) is used. |
 | **Returns:** | | Sorted polynomial reduction of the first input by the second. |
 
 ---
@@ -303,10 +303,10 @@ Reduce a **sorted** first polynomial by a second list of **sorted** polynomial w
 | | **poly_list** | A list of sorted polynomials. |
 | | **tracker1** | A polynomial. |
 | | **tracker_list** | A list of polynomials. |
-| | **full_reduced** | A bool, that determins wether reduction (*False*) or full reduction (*True*) is used. |
-| | **reduction_out** | A bool, that determins weather a polynomial list decribing the reduction is output. |
-| **Returns:** | | A pair of a sorted polynomial and polynomial. A triple of a sorted polynomial, a polynomial list and a polynomial. These are the reduction of *poly1* and the result of applying the same reduction operatiosn to *tracker1* with *tracker_list. |
-| Or | | A triple of a sorted polynomial, a polynomial list and a polynomial. These are the reduction of *poly1*, list of multiple polynomials each lemtn in *poly_list* added to *poly1* to reduces it and the result of applying the same operatiosn to *tracker1* with *tracker_list*. |
+| | **full_reduced** | A bool, that determines weather reduction (*False*) or full reduction (*True*) is used. |
+| | **reduction_out** | A bool, that determines weather a polynomial list describing the reduction is output. |
+| **Returns:** | | A pair of a sorted polynomial and polynomial. A triple of a sorted polynomial, a polynomial list and a polynomial. These are the reduction of *poly1* and the result of applying the same reduction operations to *tracker1* with *tracker_list. |
+| Or | | A triple of a sorted polynomial, a polynomial list and a polynomial. These are the reduction of *poly1*, list of multiple polynomials each element in *poly_list* added to *poly1* to reduces it and the result of applying the same operations to *tracker1* with *tracker_list*. |
 
 ---
 
@@ -317,12 +317,13 @@ Reduces a **sorted** polynomial list by itself.
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly_list** | A list of sorted polynomials. |
-| | **full_reduced** | A bool, that determins weather reduction (*False*) or full reduction (*True*) is used. |
+| | **full_reduced** | A bool, that determines weather reduction (*False*) or full reduction (*True*) is used. |
 | **Returns:** | | Sorted polynomial reduction of input polynomial list by itself. |
 
 ---
 
-#### &#x1F539; reduce_list_tracking(poly_list, tracking_list, full_reduced = True)
+####
+ &#x1F539; reduce_list_tracking(poly_list, tracking_list, full_reduced = True)
 
 Reduces a **sorted** polynomial list by itself while tracking the steps of the reduction.
 
@@ -330,8 +331,8 @@ Reduces a **sorted** polynomial list by itself while tracking the steps of the r
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly_list** | A list of sorted polynomials. |
 | | **tracking_list** | A list of polynomials. |
-| | **full_reduced** | A bool, that determins weather reduction (*False*) or full reduction (*True*) is used. |
-| **Returns:** | | Apair of a sorted polynomial reduction of *poly_list* by itself and a ponlomial list obtained form *tracking_list* under the same reduction operations. |
+| | **full_reduced** | A bool, that determines weather reduction (*False*) or full reduction (*True*) is used. |
+| **Returns:** | | A pair of a sorted polynomial reduction of *poly_list* by itself and a polynomial list obtained form *tracking_list* under the same reduction operations. |
 
 ---
 
@@ -349,7 +350,7 @@ S-polynomial of two **sorted** polynomials.
 
 #### &#x1F539; G_poly(poly1, poly2)
 
-G-polynomail of two **sorted** polynomials.
+G-polynomial of two **sorted** polynomials.
 
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
@@ -361,62 +362,62 @@ G-polynomail of two **sorted** polynomials.
 
 #### &#x1F539; grobner(poly_list, reduced = True, dim_ranges = [], max_dims = [], progress_output = True)
 
-#Provides a Gromber basis of the ideal generated by a list polynomialss. For homginous polynomials the Gröbner bais may be conisdered only up to a certain degrees in any partition of the the polynomial vriables.
+Provides a Romberg basis of the ideal generated by a list polynomials. For homogenous polynomials the Gröbner basis may be considered only up to a certain degrees in any partition of the the polynomial variables.
 
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly_list** | A polynomial list. |
-| | **full_reduced** | A bool, that determins weather Gröbner bais is fully reduced (*True*) or not (*False*). |
-| | **dim_ranges** | A list of pairs (or two lement lsit) of integers that form a parttion of the number of varaibles in the polynomials (with index beging at 0), e.g. *[[0,2],[3,5]]* is a partion for six varaible polynomials. |
-| | **max_dims** | A list of integers of the same lenght as *dim_ranges*, that detemins the maximal dimasion considers for the Gröbner basis. |
-| | **progress_output** | A bool, that determins weather porgress upades are prinded during the execution of the algorithum. |
-| **Returns:** | | A polynomial list of Gröbner basis gnerators. |
+| | **full_reduced** | A bool, that determines weather Gröbner basis is fully reduced (*True*) or not (*False*). |
+| | **dim_ranges** | A list of pairs (or two element list) of integers that form a partition of the number of variables in the polynomials (with index begin at 0), e.g. *[[0,2],[3,5]]* is a partition for six variable polynomials. |
+| | **max_dims** | A list of integers of the same length as *dim_ranges*, that determines the maximal dimension considers for the Gröbner basis. |
+| | **progress_output** | A bool, that determines weather progress updates are printed during the execution of the algorithm. |
+| **Returns:** | | A polynomial list of Gröbner basis generators. |
 
 ---
 
 #### &#x1F539; grobner_tracking(poly_list, reduced = True, dim_ranges = [], max_dims = [], progress_output = True)
 
-#Provides a Gromber basis of the ideal generated by a list polynomialss and the polynomials that multiples that trnaform the original ideal gnerators into the Gröbner basis. For homginous polynomials the Gröbner bais may be conisdered only up to a certain degrees in any partition of the the polynomial vriables.
+Provides a Gröbner basis of the ideal generated by a list polynomials and the polynomials that multiples that transform the original ideal generators into the Gröbner basis. For homogenous polynomials the Gröbner basis may be considered only up to a certain degrees in any partition of the the polynomial variables.
 
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly_list** | A polynomial list. |
-| | **full_reduced** | A bool, that determins weather Gröbner bais is fully reduced (*True*) or not (*False*). |
-| | **dim_ranges** | A list of pairs (or two lement lsit) of integers that form a parttion of the number of varaibles in the polynomials (with index beging at 0), e.g. *[[0,2],[3,5]]* is a partion for six varaible polynomials. |
-| | **max_dims** | A list of integers of the same lenght as *dim_ranges*, that detemins the maximal dimasion considers for the Gröbner basis. |
-| | **progress_output** | A bool, that determins weather porgress upades are prinded during the execution of the algorithum. |
-| **Returns:** | | A pair of polynomial list of Gröbner basis generators and a list of list of polynomials that represente for each Gröbner basis generator the list of polynomial multiples of the orginal *poly_list* that sum together to provid that Gröbner basis generator. |
+| | **full_reduced** | A bool, that determines weather Gröbner basis is fully reduced (*True*) or not (*False*). |
+| | **dim_ranges** | A list of pairs (or two element list) of integers that form a partition of the number of variables in the polynomials (with index begin at 0), e.g. *[[0,2],[3,5]]* is a partition for six variable polynomials. |
+| | **max_dims** | A list of integers of the same length as *dim_ranges*, that determines the maximal dimension considers for the Gröbner basis. |
+| | **progress_output** | A bool, that determines weather progress updates are printed during the execution of the algorithm. |
+| **Returns:** | | A pair of polynomial list of Gröbner basis generators and a list of list of polynomials that represent for each Gröbner basis generator the list of polynomial multiples of the original *poly_list* that sum together to provide that Gröbner basis generator. |
 
 ---
 
-#### &#x1F539; intersection_Grobner(poly_list1_in, poly_list2_in, varaibles, dim_ranges = [], max_dims = [], grobner_poly_lists_first = False, show_poly_list = True, progress_output = True)
+#### &#x1F539; intersection_Grobner(poly_list1_in, poly_list2_in, variables, dim_ranges = [], max_dims = [], grobner_poly_lists_first = False, show_poly_list = True, progress_output = True)
 
-Find a reduced Gorbner basis of the interection of two ideal whose generators are epresed as two polynomial lists. For homginous polynomials the Gröbner bais may be conisdered only up to a certain degrees in any partition of the the polynomial vriables.
+Find a reduced Gröbner basis of the intersection of two ideal whose generators are expressed as two polynomial lists. For homogenous polynomials the Gröbner basis may be considered only up to a certain degrees in any partition of the the polynomial variables.
 
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly_list1_in** | A polynomial list. |
 | | **poly_list2_in** | A polynomial list. |
-| | **varaibles** | List of strings of the same length as the number of polynomial varaibles, each string represeting the chrecter(s) to be used to display the varaible at the given poistion in the list if required. |
-| | **dim_ranges** | A list of pairs (or two lement lsit) of integers that form a parttion of the number of varaibles in the polynomials (with index beging at 0), e.g. *[[0,2],[3,5]]* is a partion for six varaible polynomials. |
-| | **max_dims** | A list of integers of the same lenght as *dim_ranges*, that detemins the maximal dimasion considers for the Gröbner basis. |
-| | **grobner_poly_lists_first** | A bool, that determeis weather the Gröbner basis of input ideas are first computed spearatly befor comuting the intersection on these Gröbner basies insead (usaly faster). |
-| | **show_poly_list** | A bool, that when *grobner_poly_lists_first* is *TRUE* determins if the initaly computed Gröbner basies are dispalyed befor computing the intersection Gröbner basis. |
-| | **progress_output** | A bool, that determins weather porgress upades are prinded during the execution of the algorithum. |
-| **Returns:** | | A polynomial list of Gröbner basis gnerators of the interction of ideals generated by input polynomial lists. |
+| | **variables** | List of strings of the same length as the number of polynomial variables, each string representing the charterer(s) to be used to display the variable at the given position in the list if required. |
+| | **dim_ranges** | A list of pairs (or two element list) of integers that form a partition of the number of variables in the polynomials (with index begin at 0), e.g. *[[0,2],[3,5]]* is a partition for six variable polynomials. |
+| | **max_dims** | A list of integers of the same lenght as *dim_ranges*, that determines the maximal dimasion considers for the Gröbner basis. |
+| | **grobner_poly_lists_first** | A bool, that determeis weather the Gröbner basis of input ideas are first computed spearatly before commuting the intersection on these Gröbner bases instead (usually faster). |
+| | **show_poly_list** | A bool, that when *grobner_poly_lists_first* is *TRUE* determines if the initially computed Gröbner biases are displayed before computing the intersection Gröbner basis. |
+| | **progress_output** | A bool, that determines weather progress upgrades are printed during the execution of the algorithm. |
+| **Returns:** | | A polynomial list of Gröbner basis generators of the interaction of ideals generated by input polynomial lists. |
 
 ---
 
 #### &#x1F539; Syzygy(Grobner_bais, remove_trivial_syz = True, dim_ranges = [], max_dims = [])
 
-Provides a Gröbner basis of Syzygys of a Gröbner basis. For homginous polynomials the Gröbner bais may be conisdered only up to a certain degrees in any partition of the the polynomial vriables.
+Provides a Gröbner basis of Syzygys of a Gröbner basis. For homogenous polynomials the Gröbner basis may be considered only up to a certain degrees in any partition of the polynomial variables.
 
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **Grobner_bais** | A polynomial list that consists of the generators of a Gröbner basis. |
-| | **remove_trivial_syz** | A bool, that determins weather Syzygys of the form of the difnece of multiples by eachover of two gerators are removed. |
-| | **dim_ranges** | A list of pairs (or two lement lsit) of integers that form a parttion of the number of varaibles in the polynomials (with index beging at 0), e.g. *[[0,2],[3,5]]* is a partion for six varaible polynomials. |
-| | **max_dims** | A list of integers of the same lenght as *dim_ranges*, that detemins the maximal dimasion considers for the Gröbner basis. |
-| **Returns:** | | A polynomial lis of gnerators of a Gröbner bais Syzygys of the input Gröbner basis. |
+| | **remove_trivial_syz** | A bool, that determines weather Syzygys of the form of the diffidence of multiples by each over of two generators are removed. |
+| | **dim_ranges** | A list of pairs (or two element list) of integers that form a partition of the number of variables in the polynomials (with index begin at 0), e.g. *[[0,2],[3,5]]* is a partition for six variable polynomials. |
+| | **max_dims** | A list of integers of the same length as *dim_ranges*, that determines the maximal dimension considers for the Gröbner basis. |
+| **Returns:** | | A polynomial list of generators of a Gröbner basis Syzygys of the input Gröbner basis. |
 
 ---
