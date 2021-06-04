@@ -51,7 +51,7 @@ polys=[
 #display the polynomial list
 G.display_poly_list(polys, ['x', 'y', 'z'])
 
-#sort polynomials by lexagrphic ordering on varaibles and enumerated list disaplay
+#sort polynomials by lexicographical ordering on varaibles and enumerated list disaplay
 sorted_poly = G.sort_poly(polys[0])
 print(G.poly_to_text(sorted_poly, ['x', 'y', 'z']))
 sorted_polys = G.sort_poly_list(polys)
@@ -119,39 +119,86 @@ More exaples form the paper that the libray accompanies can be found in the *'Ex
 
 #### &#x1F539; eval_poly(poly, values, keep_varaible_positions = False)
 
-Evaluates a polynomial at on list of values for each for all or some varibales.
+Evaluates a polynomial at on list of values for all or some varibales.
 
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly** | A polynomial. |
 | | **values** | List of numbers of the same lenght as the number of polynomial varaibles. Entries of the list can be *None* if the evuation of that varaible it not desired. |
-| | **keep_varaible_positions** | Determins weather evauated veriables are removed form the polynomials or not. |
-| **Returns:** | | An integer or float when all varaibles are evaluated unless *keep_varaible_positions* is *False*. |
+| | **keep_varaible_positions** | Determins weather evauated veriables positions are removed form the polynomials or not. |
+| **Returns:** | | An integer or float when all varaibles are evaluated unless *keep_varaible_positions* is *TRUE*. |
 | Or | | A polynomila when some varaible are not evaluated or when *keep_varaible_positions* is *TRUE*. |
 
 ---
 
-#### &#x1F539; neg_poly()
+#### &#x1F539; neg_poly(poly_to_neg)
+
+Negate all cofficnets of terms in a polynomial.
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly_to_neg** | A polynomial. |
+| **Returns:** | | Polynomial negation of the input. |
 
 ---
 
-#### &#x1F539; add_poly()
+#### &#x1F539; add_poly(poly1,poly2)
+
+Adds a pair of polynomials (each polynomial with the same number of varaibles).
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly1** | A polynomial. |
+| | **poly2** | A polynomial. |
+| **Returns:** | | Polynomial sum of the inputs. |
 
 ---
 
-#### &#x1F539; mult_poly()
+#### &#x1F539; mult_poly(poly1, poly2, exterior = 0)
+
+Multiplies a pair of polynomials (each polynomial with the same number of varaibles).
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly1** | A polynomial. |
+| | **poly2** | A polynomial. |
+| | **exterior** | A integer less than the number of varaibles. Though no longer polynomial multiplication, variables in either polynomial below this value will be treated as variable in an exterior algebra when multiplied. |
+| **Returns:** | | Polynomial multiplication of the inputs. |
 
 ---
 
-#### &#x1F539; mult_list()
+#### &#x1F539; mult_list(poly_to_mul, poly_list, exterior = 0)
+
+Multiplies each polynomial in a list lsit by a polynomial (all polynomial with the same number of varaibles).
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly_to_mul** | A polynomial. |
+| | **poly_list** | A list of polynomials. |
+| | **exterior** | A integer less than the number of varaibles. Though no longer polynomial multiplication, variables in any polynomial below this value will be treated as variable in an exterior algebra when multiplied. |
+| **Returns:** | | A Polynomial list, multiplication of the input polynomial lsit by the input polynomial. |
 
 ---
 
 #### &#x1F539; sort_poly(poly_to_sort)
 
+Sorts polynomials terms by monomial lexicographical ordering.
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly_to_sort** | A polynomial. |
+| **Returns:** | | the input polynomial whose terms are soreted. |
+
 ---
 
 #### &#x1F539; sort_poly_list(poly_list_to_sort, sort_with = None)
+
+Sorts each polynomial terms in a list by monomial lexicographical odering and the list order by monomial lexicographical ordering on the ordered leading terms monomial.
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly_list_to_sort** | A list of polynomials. |
+| **Returns:** | | the input polynomial list whose order and term orders are soreted. |
 
 ---
 
