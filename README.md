@@ -187,7 +187,7 @@ Sorts polynomials terms by monomial lexicographical ordering.
 |  | Variable | Description |
 | ------------ | ------------- | ------------- |
 | **Parameters:** | **poly_to_sort** | A polynomial. |
-| **Returns:** | | the input polynomial whose terms are soreted. |
+| **Returns:** | | The input polynomial whose terms are soreted. |
 
 ---
 
@@ -252,50 +252,123 @@ Sorts each polynomial terms in a list by monomial lexicographical odering and th
 
 ### Grobner basis functions
 
-#### &#x1F539; reduce()
+#### &#x1F539; reduce(poly1, poly2)
+
+reduces a **sorted** first polynomial by a second **sorted** polynomial (reduces only leadign terms).
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly1** | A sorted polynomial. |
+| | **poly2** | A sorted polynomial. |
+| **Returns:** | | Sorted polynomial reduction of the first input by the second. |
 
 ---
 
-#### &#x1F539; full_reduce()
+#### &#x1F539; full_reduce(poly1, poly2, reduction_out = False)
+
+Fully reduces a **sorted** first polynomial by a second **sorted** polynomial (reduces all terms).
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly1** | A sorted polynomial. |
+| | **poly2** | A sorted polynomial. |
+| | **reduction_out** | A bool, that determins weather a polynomial decribing the reduction is output. |
+| **Returns:** | | Sorted polynomial full reduction of the first input by the second. |
+| Or | | Apair of a Sorted polynomial full reduction of the first input by the second and the polynomial multiple of *poly2* used to fully reduce *poly1*. |
 
 ---
 
-#### &#x1F539; list_reduce()
+#### &#x1F539; list_reduce(poly1, poly_list, full_reduced = False)
+
+Reduce a **sorted** first polynomial by a second list of **sorted** polynomials.
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly1** | A sorted polynomial. |
+| | **poly_list** | A list of sorted polynomials. |
+| | **full_reduced** | A bool, that determins wether reduction (*False*) or full reduction (*True*) is used. |
+| **Returns:** | | Sorted polynomial reduction of the first input by the second. |
 
 ---
 
-#### &#x1F539; list_reduce_tracking()
+#### &#x1F539; list_reduce_tracking(poly1, poly_list, tracker1, tracker_list, full_reduced = False, reduction_out = False)
+
+Reduce a **sorted** first polynomial by a second list of **sorted** polynomial while tracking and repeating the reduction in a second polynomials by as second list of polynomials.
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly1** | A sorted polynomial. |
+| | **poly_list** | A list of sorted polynomials. |
+| | **tracker1** | A polynomial. |
+| | **tracker_list** | A list of polynomials. |
+| | **full_reduced** | A bool, that determins wether reduction (*False*) or full reduction (*True*) is used. |
+| | **reduction_out** | A bool, that determins weather a polynomial list decribing the reduction is output. |
+| **Returns:** | | A pair of a sorted polynomial and polynomial. A triple of a sorted polynomial, a polynomial list and a polynomial. These are the reduction of *poly1* and the result of applying the same reduction operatiosn to *tracker1* with *tracker_list. |
+| Or | | A triple of a sorted polynomial, a polynomial list and a polynomial. These are the reduction of *poly1*, list of multiple polynomials each lemtn in *poly_list* added to *poly1* to reduces it and the result of applying the same operatiosn to *tracker1* with *tracker_list. |
 
 ---
 
-#### &#x1F539; reduce_list()
+#### &#x1F539; reduce_list(poly_list, full_reduced = True)
+
+Reduces a **sorted** polynomial list by itself.
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly_list** | A list of sorted polynomials. |
+| | **full_reduced** | A bool, that determins wether reduction (*False*) or full reduction (*True*) is used. |
+| **Returns:** | | Sorted polynomial reduction of input polynomial list by itself. |
 
 ---
 
-#### &#x1F539; reduce_list_tracking()
+#### &#x1F539; reduce_list_tracking(poly_list, tracking_list, full_reduced = True)
+
+Reduces a **sorted** polynomial list by itself while tracking the steps of the reduction
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly_list** | A list of sorted polynomials. |
+| | **tracking_list** | A list of polynomials. |
+| | **full_reduced** | A bool, that determins wether reduction (*False*) or full reduction (*True*) is used. |
+| **Returns:** | | Apair of a sorted polynomial reduction of *poly_list* by itself and a ponlomial list obtained form *tracking_list* under the same reduction operations. |
 
 ---
 
-#### &#x1F539; S_poly()
+#### &#x1F539; S_poly(poly1, poly2)
+
+S-polynomial of two **sorted** polynomials.
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly1** | A sorted polynomial. |
+| | **poly2** | A sorted polynomial. |
+| **Returns:** | | S-polynomial of the input polynomials. |
 
 ---
 
-#### &#x1F539; G_poly()
+#### &#x1F539; G_poly(poly1, poly2)
+
+G-polynomail of two **sorted** polynomials.
+
+|  | Variable | Description |
+| ------------ | ------------- | ------------- |
+| **Parameters:** | **poly1** | A sorted polynomial. |
+| | **poly2** | A sorted polynomial. |
+| **Returns:** | | G-polynomial of the input polynomials. |
 
 ---
 
-#### &#x1F539; grobner()
+#### &#x1F539; grobner(poly_list, reduced = True, dim_ranges = [], max_dims = [], progress_output = True)
 
 ---
 
-#### &#x1F539; grobner_tracking()
+#### &#x1F539; grobner_tracking(poly_list, reduced = True, dim_ranges = [], max_dims = [], progress_output = True)
 
 ---
 
-#### &#x1F539; intersection_Grobner()
+#### &#x1F539; intersection_Grobner(poly_list1_in, poly_list2_in, varaibles, dim_ranges = [], max_dims = [], grobner_poly_lists_first = False, show_poly_list = True)
 
 ---
 
-#### &#x1F539; Syzygy()
+#### &#x1F539; Syzygy(Grobner_bais, remove_trivial_syz = True, dim_ranges = [], max_dims = [])
 
 ---
