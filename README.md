@@ -10,7 +10,7 @@
 
 Library of functions for polynomial arithmetic and computing integral Gröbner basies, incuding Gröbner basis of the intersections of two ideals and the Gröbner basis of Syzygys. In addtion, the polynomials used to provide any Gröbner basis interms of the orginal ideal genraotrs can be tracked and returned. If ideal generators are homogenious polynomials, then computations can be restricted to a maximal degree (or dgrees within a partiton of the varaibles).
 
-The code accompanies the paper: Matthew Burfitt, Jelena Grbi ́c "The cohomology of free loop spaces of <img src="https://render.githubusercontent.com/render/math?math=SU(n %2B 1)/T^n">" and the libray includes everything needed to be applied to computations with certian Leray-Serre spectral sequences. All code providing computational results presented in the paper are given as exaples.
+The code accompanies the paper: Matthew Burfitt, Jelena Grbić "The cohomology of free loop spaces of <img src="https://render.githubusercontent.com/render/math?math=SU(n %2B 1)/T^n">" and the libray includes everything needed to be applied to computations with certian Leray-Serre spectral sequences. All code providing computational results presented in the paper are given as exaples.
 
 # Installation
 
