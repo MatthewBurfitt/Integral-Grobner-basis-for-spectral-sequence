@@ -21,7 +21,7 @@ Place a copy of "IntagralGrobner.py" in your python path, nothing else required 
 Load the *IntagralGrobner* library.
 
 ```python
-import IntagralGrobner as G
+import IntegralGrobner as G
 ```
 
 ## Example
