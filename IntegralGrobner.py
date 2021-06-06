@@ -734,7 +734,7 @@ def Syzygy(Grobner_bais, remove_trivial_syz = True, dim_ranges = [], max_dims = 
                         if Grobner_bais[g] == syz[p]:
                             non_triaval = False
                             break
-                    if not non_triaval:#tab in???
+                    if not non_triaval:
                         break
             if dim_ranges != []:
                 for p in range(len(syz)):
@@ -742,7 +742,7 @@ def Syzygy(Grobner_bais, remove_trivial_syz = True, dim_ranges = [], max_dims = 
                         not_out_of_range = dim_range_check(mono_mult(syz[p][0],[Grobner_bais[p][0]])[0], dim_ranges, max_dims)
                         if not not_out_of_range:
                             break
-            if syz != [] and non_triaval and not_out_of_range:#tab in???
+            if syz != [] and non_triaval and not_out_of_range:
                 Syzygy_Grobner.append(syz)
     return Syzygy_Grobner
 
