@@ -724,8 +724,8 @@ def Syzygy(Grobner_bais, remove_trivial_syz = True, dim_ranges = [], max_dims = 
             m2 = div_mon(leading_lcm, Grobner_bais[j][0])
             S = sort_poly(add_poly( mono_mult(m1, Grobner_bais[i]) , neg_poly(mono_mult(m2, Grobner_bais[j])) ))
             syz = list_reduce(S, Grobner_bais, full_reduced = True, edit_out = False, reduction_out = True)[1]
-            syz[i] = add_poly(neg_poly(syz[i]), [m1])
-            syz[j] = add_poly(neg_poly(syz[j]), neg_poly([m2]))
+            syz[i] = add_poly(syz[i], neg_poly([m1]))
+            syz[j] = add_poly(syz[j], [m2])
             for p in range(len(syz)):
                 syz[p] = sort_poly(syz[p])
             if remove_trivial_syz:
