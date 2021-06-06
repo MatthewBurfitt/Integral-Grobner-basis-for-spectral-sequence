@@ -1,5 +1,5 @@
 #d2_row1
-import IntagralGrobner as G
+import IntegralGrobner as G
 
 #set variabel names
 varaibles = ["y1","y2","y3","g2","g1","g"]

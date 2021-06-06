@@ -1,6 +1,6 @@
 #d4_row1
 #WARNING!!! may take some time to run
-import IntagralGrobner as G
+import IntegralGrobner as G
 
 #set variabel names
 varaibles = ["y1","y2","y3","g2","g1","g"]
